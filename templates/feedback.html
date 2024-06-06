@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title> Feedback </title>
+<link rel="stylesheet" href="/static/style.css">
+{% endblock %}
+
+{% block body %}
+<div class="feedback">
+
+<form method="POST">
+<b> How would you rate our website? (from 0 to 10) </b> <br>
+<input name="rating" type="number" min=0 max=10 required>
+<br><br>
+<b> What feature(s) do you use most often? </b> <br>
+<textarea name="useful" type="text" rows=7 cols=70 maxlength=1000></textarea>
+<br><br>
+<b> What aspects of this website do you like the most? </b> <br>
+<textarea name="like" type="text" rows=7 cols=70 maxlength=1000></textarea>
+<br><br>
+<b> What aspects of this website don't you like? </b> <br>
+<textarea name="dislike" type="text" rows=7 cols=70 maxlength=1000></textarea>
+<br><br>
+<b> Where do you think we can improve? </b> <br>
+<textarea name="improve" type="text" rows=7 cols=70 maxlength=1000></textarea>
+<br><br><br>
+<button> Submit </button>
+</form>
+
+</div>
+{% endblock %}

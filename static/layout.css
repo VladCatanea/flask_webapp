@@ -1,0 +1,41 @@
+.banner {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.banner a {
+    text-decoration: none;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px 20px;
+    margin: 0;
+}
+
+.banner a.account {
+    float: right;
+}
+
+.banner a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.banner_button {
+    background-color: white;
+    position: relative;
+    align: center;
+}
+
+.flashes {
+    background-color: #46aa47;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Delete Post</title>
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+
+<style>
+button#yes {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	margin-left: 42%;
+}
+button#no {
+	display: inline-block;
+	position: absolute;
+	margin-left: 52%;
+}
+</style>
+</head>
+
+<h2 align="center">Are you sure you want to delete "{{ post[0] }}"?</h2>
+<br>
+<div>
+<form action="/delete_post/{{post[1]}}" method="POST" style="display:inline-block">
+<button id="yes"> Yes </button>
+</form>
+<button id="no" onClick="window.location.href='/edit_post/{{post[1]}}'"> No </button>
+</div>

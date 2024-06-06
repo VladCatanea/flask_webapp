@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>My account</title>
+<link rel="stylesheet" href="/static/style.css" />
+{% endblock %}
+
+{% block body %}
+<form action="/logout" method="POST">
+<button id="logout_button"> LOG OUT </button>
+</form>
+<h1 style="display:inline">My account</h1>
+<br><br><br><br>
+<a href="/new_post" class="nav"> Add a new product to sell </a>
+<br>
+<a href="/my_posts" class="nav"> Manage your products </a>
+<br><br><br>
+<a href="/edit_profile" class="nav"> Edit your profile </a>
+<br>
+<a href="/change_password" class="nav"> Change your password </a>
+{% endblock %}

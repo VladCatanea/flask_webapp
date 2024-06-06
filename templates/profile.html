@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>{{ user[0] }}</title>
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+{% endblock %}
+
+{% block body %}
+<body>
+<h2>{{ user[0] }}</h2>
+<br>
+email: {{ user[1] }}
+<br><br>
+</body>
+{% endblock %}

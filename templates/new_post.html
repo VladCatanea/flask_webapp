@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>
+New Post
+</title>
+<link rel="stylesheet" href="/static/style.css" />
+{% endblock %}
+
+{% block body %}
+<h3>What new product do you wish to post?</h3>
+
+<form enctype=multipart/form-data method='POST' name='product'>
+	Product title: <br>
+	<input type='text' size='76' name='product_title' maxlength=49 required>
+	<br><br>
+	Description (optional): <br>
+	<textarea rows='15' cols='75' name='product_description' maxlength=998></textarea>
+	<br><br>
+	Price: <br>
+	<input type='number' name='product_price' min=0.01 max=100000 step=".01" required>
+	<br><br>
+	Quantity: <br>
+	<input type="number" name="product_quantity" min=1 max=100000 step="1" required>
+	<br><br>
+	Product image (optional): <br>
+	<input type=file name=file>
+	<br><br><br>
+	<button> Post! </button>
+	<br><br>
+</form>
+{% endblock %}

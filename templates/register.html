@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block head %}
+		<title>
+			Register
+		</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+{% endblock %}
+
+{% block body %}
+		<form method='POST' name='new_user' onsubmit='return validate()'>
+			Username: <br>
+			<input type='text' name='username'>
+			<br><br>
+			Email: <br>
+			<input type='text' name='email'>
+			<br><br>
+			Password: <br>
+			<input id='1' type='password' name='passwd'>
+			<br><br>
+			Confirm password: <br>
+			<input id='2'type='password' name='passwd2'>
+			<br><br>
+			<button> Sign Up! </button>
+		</form>
+	<script>
+	function validate()
+	{
+		if(document.forms['new_user']['passwd'].value != document.forms['new_user']['passwd2'].value)
+		{
+			alert('The passwords don\'t match!');
+			event.preventDefault();
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	</script>
+{% endblock %}

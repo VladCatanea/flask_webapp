@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/static/test.css">
+
+<form action="#">
+  Radio Button: <input type="radio" id="myRadio" name="test" required>
+  <input type="submit">
+</form>
+
+<p>Click the "Try it" button to find out if the radio button must be checked before submitting the form.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myRadio").required;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+<br><br><br><br>
+<form action="#">
+<input type="radio" name="rating" value="0" class="weird" checked disabled>
+<div class="rating">
+
+
+<label class="container" for="1">
+
+<span>☆</span></label><input type="radio" name="rating" value="1" id="1" min=1><label class="container" for="2">
+
+<span>☆</span></label><input type="radio" name="rating" value="2" id="2" required><label class="container" for="3">
+
+<span>☆</span></label><input type="radio" name="rating" value="3" id="3" required><label class="container" for="4">
+
+<span>☆</span></label><input type="radio" name="rating" value="4" id="4" required><label class="container" for="5">
+
+<span>☆</span></label><input type="radio" name="rating" value="5" id="5" required>
+</div>
+<input type="text" name="comment" required>
+<input type="submit">
+</form>
+<br><br><br><br>
+
+<div class="A">
+<label> <span>abc</span> </label>
+<label> <span>def</span> </label>
+</div>
+
+<input type="radio" name="rad" value="0" class="weird" checked disabled>
+<input type="text" name="comment" required>
+<br><br>
+{{ request.args }}

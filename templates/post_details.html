@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>
+{{ post[0] }}
+</title>
+
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+<link rel="stylesheet" type="text/css" href="/static/rating.css">
+
+{% endblock %}
+
+{% block body %}
+
+<div>
+<br>
+    <h1 class="title">{{ post[0] }}</h1><h3 class="title"><div class="title">{{ post[2] }} RON</div></h3>
+    <br><br><br><br>
+    rating: {{ rating }}<br>
+    {{ post[1] }} <br><br>
+    {% if image %}
+        <a href="{{ image }}"><image src="{{ image }}"></a>
+        <br><br>
+    {% endif %}
+    quantity in stock: {{ post[4] }} pcs. <br><br>
+    seller: <a class="seller" href="/profile/{{ post[3] }}"><i>{{ post[3] }}</i></a> <br>
+</div>
+<br><br>
+
+
+<!-- Now, the section for reviews -->
+
+<h3 class="comments"> Reviews &darr; </h3>
+<form method="POST" name="review">
+Your rating: <br>
+<!-- ★=&#9733, ☆=&#9734 -->
+
+<div class="rating">   <!--Star rating from https://css-tricks.com/star-ratings comments: Paul Nichols (http://dabblet.com/gist/1722368)-->
+<input name="rating" type="radio" value="5" required/><span>☆</span><input name="rating" type="radio" value="4" /><span>☆</span><input name="rating" type="radio" value="3" /><span>☆</span><input name="rating" type="radio" value="2" /><span>☆</span><input name="rating" type="radio" value="1" /><span>☆</span>
+</div>
+    
+    <br>
+Your comment:<br>
+    <textarea name="comment" rows=5 cols=50></textarea><br>
+    <button> post </button>
+</form>
+<br>
+<div class="comments">
+{% if comments %}
+    {% for comment in comments %}
+        {% if comment[1] %}
+          <div class="comment">
+          <b>{{ comment[0] }}:</b><div class="stars">{{ '  ' + '★'*comment[2] + '☆'*(5-comment[2]) }}</div> 
+          <br><br>
+          {{ comment[1] }}<br>
+          </div>
+          <br>
+      {% endif %}
+    {% endfor %}
+{% else %}
+    <div class="comment">
+    No comments
+    </div>
+{% endif %}
+</div><br>
+
+{% endblock %}

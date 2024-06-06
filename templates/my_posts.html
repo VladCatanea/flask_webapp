@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title> My Posts </title>
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+<style>
+a#title {
+	text-decoration: none;
+    color: #6ff275;
+}
+a#title:hover {
+    color: #0099ff;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+{% for post in posts %}
+	<h3><a id="title" href="/edit_post/{{post[3]}}">{{ post[0] }}</a></h3>
+	{{ post[1] }} <br>
+	price: {{ post[2] }} RON <br>
+	quantity in stock: {{ post[4] }} pcs. <br>
+	<br>
+{% endfor %}
+
+{% endblock %}

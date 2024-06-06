@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title> Edit Post </title>
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+{% endblock %}
+
+{% block body %}
+
+<form action="/edit_post/{{post[3]}}" method='POST' name='product'>
+    Product title: <br>
+	<input type='text' size='75' name='product_title' maxlength=49 value="{{ post[0] }}" required>
+	<a style="margin-left:60px" href="/delete_post/{{post[3]}}">DELETE POST</a>
+	<br><br>
+	Description: <br>
+	<textarea rows='15' cols='75' name='product_description' maxlength=999>{{ post[1] }}</textarea>
+	<br><br>
+	Price: <br>
+	<input type='number' name='product_price' min=0.01 max=100000 step=".01" value={{ post[2] }} required>
+	<br><br>
+	Quantity: <br>
+	<input type="number" name="product_quantity" min=1 max=100000 step="1" value={{ post[4] }} required>
+	<br><br>
+	<a href="/manage_images/{{post[3]}}"> Manage images </a>
+	<br><br>
+	<button> Edit </button>
+	<br><br>
+</form>
+
+<a href="/my_posts">Back to all posts</a>
+<br><br>
+
+{% endblock %}

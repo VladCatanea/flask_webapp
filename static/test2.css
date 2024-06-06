@@ -1,0 +1,72 @@
+/*
+	Ratings Stars
+	(with as little code as possible)
+*/
+.rating {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    cursor: default;
+    background-color: green;
+    direction: rtl;
+}
+.container {
+    font-size: 20px;
+    background-color: red;
+    display: inline;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    position: relative;
+    margin:0;
+}
+.rating > .container > span {
+    display: inline-block;
+    position: relative;
+    width: 0.9em;
+}
+
+.rating:hover > .container > span {
+	color: transparent;
+}
+.rating > .container:hover ~ .container > span,
+.rating > input:hover ~ .container > span {
+	color: black;
+}
+.rating:hover > .container > span:before,
+.rating:not(:hover) > .container > span:before {
+	content: "\2605";
+	position: absolute;
+    color: yellow;
+}
+.rating > .container:hover ~ .container > span:before,
+.rating > input:hover ~ .container > span:before,
+.rating:not(:hover) > input:checked ~ .container > span:before {
+	color: transparent;
+}
+
+.rating:not(:hover) > input:checked ~ .container > span {
+    color: black;
+}
+
+input.weird:checked + .rating:not(:hover) > .container > span {
+    color: black;
+}
+input.weird:checked + .rating:not(:hover) > .container > span:before {
+    color: transparent;
+}
+
+.rating > input {
+   margin-left:-1.1em;
+   margin-right:0;
+   top:3px;
+   width:1.1em;
+   height:1.1em;
+   position:relative;
+   z-index:2;
+   opacity:0;
+}
+
+input.weird {
+   display: none;
+}

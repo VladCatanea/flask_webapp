@@ -1,0 +1,42 @@
+<title> Test </title>
+<style>
+.star {
+    font-size: 20px;
+    display: inline-block;
+    color: gold;
+}
+.star:last-child {
+    margin-right: 0;
+}
+.star:before {
+    content: '\2606';
+}
+.star.full {
+    color: gold;
+}
+.star.full:before {
+    content: '\2605';
+}
+.star.half {
+    color:transparent;
+}
+.star.half:after {
+    content:'\2605';
+    color: gold;
+    position: absolute;
+    margin-left: -17px;
+    width: 12.8px;      /* half at 8.6px, max at */
+    overflow: hidden;
+}
+.star.empty {
+    color: transparent;
+}
+</style>
+
+<div class="stars"> <span class="star full"></span>
+ <span class="star full"></span>
+ <span class="star full"></span>
+ <span class="star half"></span>
+ <span class="star empty"></span>
+
+</div>

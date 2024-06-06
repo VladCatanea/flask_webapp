@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+{% block head %}{% endblock %}
+<link rel="stylesheet" type="text/css" href="/static/layout.css">
+</head>
+
+<body>
+
+<div class="banner"><i>
+<a href="/"> Main Page </a>
+<a href="/posts"> Products </a>
+<a href="/home" class="account"> Account </a>
+</i></div>
+
+<div id="content"> <!-- From Flask documentation -->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class=flashes>
+    {% for message in messages %}
+      {{ message }}<br>
+    {% endfor %}
+    </div><br>
+  {% endif %}
+{% endwith %}
+
+{% block body %}{% endblock %}
+</div>
+
+</body>

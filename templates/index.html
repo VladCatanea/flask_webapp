@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>ABC</title>
+<link rel="stylesheet" href="/static/style.css" />
+<style>
+img {
+	max-width: 100%;
+	height: auto;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+<h1>My website</h1>
+<br/>
+<img src="/static/images/sputnik_I.jpeg" align="right" hspace="20">
+<b><a href='/posts' class="nav">See posts</a></b>
+<br><a href='/home' class="nav">My account</a>
+<br><a href='/test' class="nav">Test</a>
+<br><br><br>
+<a href='/login' class="nav">Log In</a><br/>
+<a href='/register' class="nav">New User?</a><br/>
+<br><br>
+<a href='/feedback' class="nav">Give us some feedback</a><br/>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>
+Posts
+</title>
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+
+{% endblock %}
+
+{% block body %}
+
+<div class="search">
+	<form method="GET">
+		<input class="search" name="search" type="text" maxlength=50>
+		{% if sort %}
+			<input name="sort" type="hidden" value="{{ sort }}">
+		{% endif %}
+		<button> Search </button>
+	</form>
+</div>
+
+<div class="sort">
+	<form method="GET">
+		<select name="sort" class="sort">
+			<option style="display:none"> Select criteria </option>
+			<option value="time_down"> Newest </option>
+			<option value="time_up"> Oldest </option>
+			<option value="price_down"> Price (Down) </option>
+			<option value="price_up"> Price (Up) </option>
+			<option value="rating_down"> Rating (Down) </option>
+            <option value="rating_up"> Rating (Up) </option>
+		</select>
+		{% if search %}
+			<input name="search" type="hidden" value="{{ search }}">
+		{% endif %}
+		<button> Sort </button>
+	</form>
+</div>
+
+	{% for post in posts %}
+		<h2 class="title"><a class="title" href="/post/{{post[5]}}">{{ post[0] }}</a>
+        {% if ratings[post[5]] %} <br>
+        <div class="stars"> 
+        {% for star in ratings[post[5]] %}{{ star }}{% endfor %}
+        </div>
+        {% endif %} 
+        <div class="info">{{ ovr_rating[post[5]] }}</div>
+        </h2>
+        {{ post[1] }} <br>
+		price: {{ post[2] }} RON <br>
+		quantity in stock: {{ post[4] }} pcs. <br>
+		seller: <a class="seller" href="/profile/{{ post[3] }}"><i>{{ post[3] }}</i></a> <br>
+		<br>
+	{% endfor %}
+
+{% endblock %}
