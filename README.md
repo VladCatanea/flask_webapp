@@ -7,8 +7,8 @@ This application is an example of a web application built using python for a hig
 
 ## Setup
 ### Prerequisites
-1. (Python 3)[https://www.python.org/]
-2. (Flask python module)[https://flask.palletsprojects.com/en/3.0.x/]
+1. [Python 3](https://www.python.org/)
+2. [Flask python module](https://flask.palletsprojects.com/en/3.0.x/)
 
 ### Run in debug mode
 
